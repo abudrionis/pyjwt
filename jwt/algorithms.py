@@ -58,6 +58,7 @@ requires_cryptography = set(
         "PS384",
         "PS512",
         "EdDSA",
+        "ED25519",
     ]
 )
 
@@ -97,6 +98,7 @@ def get_default_algorithms():
             from jwt.contrib.algorithms.py_ed25519 import Ed25519Algorithm
             default_algorithms.update({
                 "EdDSA":   Ed25519Algorithm(),
+                "ED25519": Ed25519Algorithm(),
             })
         except ImportError:
             pass
